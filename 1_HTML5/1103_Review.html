@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 기초 복습 총정리</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: #f9fafb;
+      color: #222;
+      padding: 20px 40px;
+    }
+    h1, h2, h3 {
+      color: #2b4b9b;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #e3e8f0;
+    }
+    .section {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #d63384;
+      font-family: Consolas, monospace;
+    }
+    hr {
+      margin: 30px 0;
+      border: none;
+      border-top: 2px dashed #ccc;
+    }
+    .highlight {
+      background-color: #fffae6;
+      border-left: 5px solid #ffd633;
+      padding: 8px 12px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 HTML5 기초 복습 총정리</h1>
+  <p><strong>범위:</strong> 글자 관련 태그 → 목록 관련 태그 → 표 관련 태그</p>
+
+  <div class="section">
+    <h2>1️⃣ HTML 문서 기본 구조</h2>
+    <table>
+      <tr><th>구성요소</th><th>태그</th><th>설명</th></tr>
+      <tr><td>문서 선언</td><td><code>&lt;!DOCTYPE html&gt;</code></td><td>HTML5 문서임을 선언</td></tr>
+      <tr><td>루트</td><td><code>&lt;html lang="ko"&gt;</code></td><td>문서 전체를 감싸는 태그</td></tr>
+      <tr><td>문서 정보</td><td><code>&lt;head&gt;</code></td><td>제목, 인코딩, CSS, JS 등 메타데이터</td></tr>
+      <tr><td>본문</td><td><code>&lt;body&gt;</code></td><td>화면에 표시되는 내용</td></tr>
+    </table>
+    <div class="highlight">💡 <code>&lt;meta charset="UTF-8"&gt;</code> : 한글 깨짐 방지<br>
+    <code>&lt;meta name="viewport" ... &gt;</code> : 반응형 웹 기본 설정</div>
+  </div>
+
+  <div class="section">
+    <h2>2️⃣ 글자 관련 태그</h2>
+    <h3>기본 글자 및 문단</h3>
+    <ul>
+      <li><code>&lt;h1&gt;~&lt;h6&gt;</code> : 제목 태그</li>
+      <li><code>&lt;p&gt;</code> : 문단 태그 (자동 여백)</li>
+      <li><code>&lt;pre&gt;</code> : 작성한 형식 그대로 출력</li>
+      <li><code>&lt;br&gt;</code> : 줄바꿈 / <code>&amp;nbsp;</code> : 공백</li>
+    </ul>
+    <h3>글자 강조 및 꾸밈</h3>
+    <table>
+      <tr><th>태그</th><th>효과</th><th>용도</th></tr>
+      <tr><td><code>&lt;b&gt;</code>, <code>&lt;i&gt;</code></td><td>굵게 / 기울임</td><td>시각적 강조</td></tr>
+      <tr><td><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code></td><td>굵게 / 기울임</td><td>의미 강조</td></tr>
+      <tr><td><code>&lt;mark&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;s&gt;</code></td><td>형광펜 / 밑줄 / 취소선</td><td>시각 강조</td></tr>
+      <tr><td><code>&lt;sup&gt;</code>, <code>&lt;sub&gt;</code></td><td>윗첨자 / 아래첨자</td><td>수학·화학식 표기</td></tr>
+      <tr><td><code>&lt;abbr title="..."&gt;</code></td><td>약어 설명</td><td>마우스 툴팁</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>3️⃣ 목록 관련 태그</h2>
+    <table>
+      <tr><th>태그</th><th>설명</th></tr>
+      <tr><td><code>&lt;ul&gt;</code></td><td>순서 없는 목록 (점 표시)</td></tr>
+      <tr><td><code>&lt;ol&gt;</code></td><td>순서 있는 목록 (숫자/문자 순번)</td></tr>
+      <tr><td><code>&lt;li&gt;</code></td><td>목록 항목</td></tr>
+    </table>
+    <div class="highlight">💡 <code>type</code>, <code>start</code>, <code>reversed</code> 속성으로 번호 스타일 변경 가능</div>
+    <p>중첩 예시:</p>
+    <pre><code>&lt;ul&gt;
+  &lt;li&gt;대분류1&lt;/li&gt;
+  &lt;li&gt;대분류2
+    &lt;ol&gt;
+      &lt;li&gt;소분류1&lt;/li&gt;
+      &lt;li&gt;소분류2&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>4️⃣ 표 관련 태그</h2>
+    <h3>기본 구조</h3>
+    <table>
+      <tr><th>태그</th><th>설명</th></tr>
+      <tr><td><code>&lt;table&gt;</code></td><td>표 전체 영역</td></tr>
+      <tr><td><code>&lt;tr&gt;</code></td><td>행 (row)</td></tr>
+      <tr><td><code>&lt;th&gt;</code></td><td>제목 셀 (굵게, 중앙정렬)</td></tr>
+      <tr><td><code>&lt;td&gt;</code></td><td>데이터 셀</td></tr>
+    </table>
+
+    <h3>셀 병합 속성</h3>
+    <table>
+      <tr><th>속성</th><th>설명</th><th>예시</th></tr>
+      <tr><td><code>rowspan</code></td><td>세로 병합</td><td><code>&lt;td rowspan="2"&gt;</code></td></tr>
+      <tr><td><code>colspan</code></td><td>가로 병합</td><td><code>&lt;td colspan="3"&gt;</code></td></tr>
+    </table>
+
+    <h3>테이블 구조 구분</h3>
+    <table>
+      <tr><th>태그</th><th>역할</th></tr>
+      <tr><td><code>&lt;thead&gt;</code></td><td>표의 머리글 영역</td></tr>
+      <tr><td><code>&lt;tbody&gt;</code></td><td>본문 영역</td></tr>
+      <tr><td><code>&lt;tfoot&gt;</code></td><td>요약 / 합계 영역</td></tr>
+    </table>
+
+    <div class="highlight">💡 표의 순서는 항상 <code>thead → tbody → tfoot</code> 순으로 작성!</div>
+
+    <h3>CSS 스타일링 예시</h3>
+    <pre><code>.tb3 {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+.tb3 thead { background-color: black; color: white; }
+.tb3 tbody { background-color: red; color: white; }
+.tb3 tfoot { background-color: yellow; color: black; }</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>5️⃣ 표 연습문제 핵심 포인트</h2>
+    <ul>
+      <li>컬렉션 목록 표 구성 : <code>colspan</code> / <code>rowspan</code> 혼합 사용</li>
+      <li><code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>로 구조 분리</li>
+      <li>CSS 배경색으로 각 영역 시각 구분</li>
+      <li>두 번째 표에서는 병합 좌표 감각 강화 실습</li>
+    </ul>
+  </div>
+
+  <hr>
+  <h2>✅ 종합 복습 핵심 요약</h2>
+  <ul>
+    <li><strong>문서 구조:</strong> <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code> 구성</li>
+    <li><strong>글자 태그:</strong> 제목, 문단, 강조, 의미 태그로 콘텐츠 구성</li>
+    <li><strong>목록 태그:</strong> <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code> 중첩 가능</li>
+    <li><strong>표 태그:</strong> 데이터 정리, 병합(<code>rowspan</code>, <code>colspan</code>), 구조 분리</li>
+    <li><strong>스타일링:</strong> HTML 속성보다 CSS 활용</li>
+    <li><strong>접근성:</strong> 의미 있는 태그 사용 (<code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;th&gt;</code>)</li>
+  </ul>
+</body>
+</html>
