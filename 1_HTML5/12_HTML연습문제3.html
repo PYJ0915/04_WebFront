@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 연습문제3</title>
+</head>
+<body>
+  <h1>회원 가입</h1>
+  <form>
+    <fieldset>
+      <legend>필수 입력 정보</legend>
+      <table>
+        <tr>
+          <th>ID</th>
+          <td><input placeholder="아이디 10글자 이내" maxlength="10" name="userId"> 
+          <button type="button">중복 확인</button></td>
+        </tr>
+          
+        <tr>
+          <th>비밀번호</th>
+          <td><input size="29" type="password" placeholder="영문,숫자,특수문자 포함 8자 이상" name="userPw"></td>
+        </tr>
+
+        <tr>
+          <th>비밀번호 확인</th>
+          <td><input size="29" type="password" name="userPwc"></td>
+        </tr>
+
+        <tr>
+          <th>Email</th>
+          <td><input type="email" name="email">
+            <select>
+              <option disabled selected>직접입력</option>
+              <option name="url">@naver.com</option>
+              <option name="url">@gmail.com</option>
+              <option name="url">@hanmail.net</option>
+              <option name="url">@daum.net</option>
+            </select>
+          </td>
+          
+            
+          
+        </tr>
+      </table>
+    </fieldset>
+
+    <fieldset>
+      <legend>추가 정보</legend>
+      프로필 사진 <input type="file" name="file"> <br><br>
+      성별 : 
+      <input type="radio" name="gender"> 남자
+      <input type="radio" name="gender"> 여자 <br><br>
+
+      생년월일 : <input type="date" name="bday"> <br><br>
+
+      취미 <br>
+      <input type="checkbox" name="hobby"> 야구
+      <input type="checkbox" name="hobby"> 농구
+      <input type="checkbox" name="hobby"> 축구 <br>
+      <input type="checkbox" name="hobby"> 공부 
+      <input type="checkbox" name="hobby"> 음악감상 <br>
+      <input type="checkbox" name="hobby"> 기타 <input name="etc"> <br><br>
+
+      자기소개 <br>
+      <textarea rows="8" cols="60" style="resize: none;"></textarea>
+
+    </fieldset> <br>
+    <button>회원가입</button>
+    <button type="reset">다시 입력</button>
+    <button type="button">이전으로</button>
+
+
+
+
+  </form>
+</body>
+</html>

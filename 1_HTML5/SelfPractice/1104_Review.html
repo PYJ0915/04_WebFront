@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 총복습 노트</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      line-height: 1.6;
+      background-color: #f9fafb;
+      color: #222;
+      padding: 20px 40px;
+    }
+    h1, h2, h3 {
+      color: #2b4b9b;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 16px 0;
+      background-color: white;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #e9eef9;
+    }
+    code {
+      background-color: #f4f4f4;
+      color: #d63384;
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .section {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .highlight {
+      background-color: #fffae6;
+      border-left: 5px solid #ffd633;
+      padding: 8px 12px;
+      margin: 10px 0;
+    }
+    hr {
+      border: none;
+      border-top: 2px dashed #ccc;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 HTML5 총복습 노트</h1>
+  <p><strong>범위:</strong> 글자 → 목록 → 표 → 영역 → 이미지 → 링크 → 입력 폼</p>
+
+  <div class="section">
+    <h2>1️⃣ HTML 기본 구조</h2>
+    <table>
+      <tr><th>요소</th><th>태그</th><th>설명</th></tr>
+      <tr><td>문서 선언</td><td><code>&lt;!DOCTYPE html&gt;</code></td><td>HTML5 문서임을 선언</td></tr>
+      <tr><td>루트</td><td><code>&lt;html lang="ko"&gt;</code></td><td>언어 설정 포함한 문서 최상위 태그</td></tr>
+      <tr><td>머리 영역</td><td><code>&lt;head&gt;</code></td><td>문서 정보, 스타일, 스크립트</td></tr>
+      <tr><td>본문 영역</td><td><code>&lt;body&gt;</code></td><td>화면에 표시되는 콘텐츠</td></tr>
+    </table>
+    <div class="highlight">
+      💡 <code>&lt;meta charset="UTF-8"&gt;</code> : 한글 깨짐 방지<br>
+      💡 <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> : 반응형 설정
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>2️⃣ 글자 관련 태그</h2>
+    <table>
+      <tr><th>태그</th><th>설명 / 효과</th></tr>
+      <tr><td><code>&lt;h1&gt;~&lt;h6&gt;</code></td><td>제목 (1~6단계 크기)</td></tr>
+      <tr><td><code>&lt;p&gt;</code></td><td>문단 구분, 자동 여백</td></tr>
+      <tr><td><code>&lt;br&gt;</code></td><td>줄바꿈</td></tr>
+      <tr><td><code>&lt;pre&gt;</code></td><td>작성 형식 그대로 표시</td></tr>
+      <tr><td><code>&lt;b&gt;</code>, <code>&lt;i&gt;</code></td><td>시각적 강조 (굵게/기울임)</td></tr>
+      <tr><td><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code></td><td>의미 강조 (중요/강조)</td></tr>
+      <tr><td><code>&lt;mark&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;s&gt;</code></td><td>형광펜 / 밑줄 / 취소선</td></tr>
+      <tr><td><code>&lt;sup&gt;</code>, <code>&lt;sub&gt;</code></td><td>윗첨자 / 아래첨자</td></tr>
+      <tr><td><code>&lt;abbr&gt;</code></td><td>약어 툴팁 (<code>title</code> 속성)</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>3️⃣ 목록 관련 태그</h2>
+    <table>
+      <tr><th>태그</th><th>설명</th></tr>
+      <tr><td><code>&lt;ul&gt;</code></td><td>순서 없는 목록</td></tr>
+      <tr><td><code>&lt;ol&gt;</code></td><td>순서 있는 목록</td></tr>
+      <tr><td><code>&lt;li&gt;</code></td><td>항목</td></tr>
+    </table>
+    <div class="highlight">
+      💡 <code>type</code>="1|a|A|i|I", <code>start</code>, <code>reversed</code> 속성으로 번호 조정 가능
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>4️⃣ 표 관련 태그</h2>
+    <table>
+      <tr><th>태그</th><th>설명</th></tr>
+      <tr><td><code>&lt;table&gt;</code></td><td>표 전체 영역</td></tr>
+      <tr><td><code>&lt;tr&gt;</code></td><td>행</td></tr>
+      <tr><td><code>&lt;th&gt;</code></td><td>제목 셀 (굵게, 중앙 정렬)</td></tr>
+      <tr><td><code>&lt;td&gt;</code></td><td>데이터 셀</td></tr>
+    </table>
+    <p><strong>병합 속성:</strong> <code>rowspan</code> (세로), <code>colspan</code> (가로)</p>
+    <p><strong>구조 구분:</strong> <code>&lt;thead&gt;</code> / <code>&lt;tbody&gt;</code> / <code>&lt;tfoot&gt;</code></p>
+  </div>
+
+  <div class="section">
+    <h2>5️⃣ 영역 관련 태그</h2>
+    <table>
+      <tr><th>형식</th><th>태그</th><th>특징</th></tr>
+      <tr><td>Block</td><td><code>&lt;div&gt;</code></td><td>줄바꿈, 크기 지정 가능</td></tr>
+      <tr><td>Inline</td><td><code>&lt;span&gt;</code></td><td>줄 내 배치, 크기 지정 불가</td></tr>
+    </table>
+    <div class="highlight">
+      💡 <code>&lt;iframe&gt;</code> : 외부 문서나 영상 삽입 (<code>width</code>, <code>height</code> 지정 가능)
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>6️⃣ 이미지 관련 태그</h2>
+    <table>
+      <tr><th>속성</th><th>설명</th></tr>
+      <tr><td><code>src</code></td><td>이미지 경로 (상대/절대/URL)</td></tr>
+      <tr><td><code>alt</code></td><td>대체 텍스트 (이미지 깨짐 시 표시)</td></tr>
+      <tr><td><code>width</code>, <code>height</code></td><td>크기 지정 (px 또는 %)</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>7️⃣ 하이퍼링크 관련 태그</h2>
+    <table>
+      <tr><th>속성</th><th>설명</th></tr>
+      <tr><td><code>href</code></td><td>연결 주소</td></tr>
+      <tr><td><code>target</code></td><td>_self(현재 탭), _blank(새 탭)</td></tr>
+    </table>
+    <div class="highlight">
+      💡 한 페이지 내 이동: <code>&lt;a href="#id"&gt;</code> + <code>id</code> 속성<br>
+      💡 이미지 링크: <code>&lt;a&gt;&lt;img src="..."&gt;&lt;/a&gt;</code>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>8️⃣ 입력 및 폼 관련 태그</h2>
+    <table>
+      <tr><th>태그/속성</th><th>설명</th></tr>
+      <tr><td><code>&lt;input type="text"&gt;</code></td><td>한 줄 텍스트 입력</td></tr>
+      <tr><td><code>type="password"</code></td><td>입력 가림</td></tr>
+      <tr><td><code>type="email"</code>, <code>type="url"</code>, <code>type="tel"</code></td><td>입력 형식 지정</td></tr>
+      <tr><td><code>type="number"</code>, <code>range"</code></td><td>숫자 입력 / 슬라이더</td></tr>
+      <tr><td><code>type="radio"</code>, <code>checkbox"</code></td><td>단일/다중 선택 (name 동일해야 그룹)</td></tr>
+      <tr><td><code>type="file"</code>, <code>color"</code></td><td>파일 업로드 / 색상 선택</td></tr>
+    </table>
+
+    <h3>form 태그 속성</h3>
+    <ul>
+      <li><code>action</code> : 전송할 주소</li>
+      <li><code>method</code> : <code>get</code> / <code>post</code></li>
+      <li><code>target</code> : 새 탭 또는 현재 탭 지정</li>
+    </ul>
+
+    <h3>기타 입력 요소</h3>
+    <ul>
+      <li><code>&lt;select&gt;&lt;option&gt;</code> : 드롭다운 선택</li>
+      <li><code>&lt;textarea&gt;</code> : 여러 줄 입력</li>
+      <li><code>&lt;fieldset&gt;&lt;legend&gt;</code> : 입력 영역 구분</li>
+      <li><code>&lt;label for&gt;</code> : 입력창과 설명 연결</li>
+      <li><code>&lt;button type&gt;</code> : submit/reset/button 지정</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>9️⃣ 실습 복습 포인트</h2>
+    <ul>
+      <li><strong>피자 주문 폼:</strong> radio / checkbox / select / textarea 조합</li>
+      <li><strong>납품 정보 폼:</strong> fieldset + 다양한 input 타입(number, range)</li>
+      <li><strong>회원가입 폼:</strong> table 정렬, 파일 업로드, reset/button 구분</li>
+    </ul>
+  </div>
+
+  <hr>
+  <h2>✅ 핵심 정리표</h2>
+  <table>
+    <tr><th>분류</th><th>핵심 키워드</th></tr>
+    <tr><td>문서 구조</td><td><code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code></td></tr>
+    <tr><td>텍스트</td><td><code>&lt;p&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code></td></tr>
+    <tr><td>목록</td><td><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code></td></tr>
+    <tr><td>표</td><td><code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code></td></tr>
+    <tr><td>영역</td><td><code>&lt;div&gt;</code>, <code>&lt;span&gt;</code></td></tr>
+    <tr><td>이미지</td><td><code>&lt;img src alt&gt;</code></td></tr>
+    <tr><td>링크</td><td><code>&lt;a href target&gt;</code></td></tr>
+    <tr><td>입력</td><td><code>&lt;input&gt;</code>, <code>&lt;form&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code></td></tr>
+  </table>
+</body>
+</html>
