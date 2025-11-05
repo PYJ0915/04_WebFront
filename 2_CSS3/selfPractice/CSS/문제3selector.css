@@ -1,0 +1,19 @@
+#list > li:nth-child(2n-1){
+  background-color: lightblue;
+}
+
+#list > li:nth-child(2n){
+  color: orange;
+}
+
+#box > p:first-of-type{
+  font-weight: bold;
+}
+
+#box > p:last-of-type{
+  background-color: lightpink;
+}
+
+#list > li:not(:nth-child(3n)){
+  background-color: aqua;
+}

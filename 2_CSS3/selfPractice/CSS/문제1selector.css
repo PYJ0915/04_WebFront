@@ -1,0 +1,21 @@
+p{
+  color: darkblue;
+}
+
+#title{
+  background-color: lightgray;
+  color: red;
+  text-align: center;
+}
+
+.desc{
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+a[target="_blank"]{
+  color: green;
+  text-decoration: none;
+}
+
+
