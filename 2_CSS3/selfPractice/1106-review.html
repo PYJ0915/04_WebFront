@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 총복습 노트</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f9fafb;
+      color: #222;
+      padding: 30px 50px;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #2b4b9b;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 16px 0;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #e3e9f9;
+    }
+    code {
+      background-color: #f4f4f4;
+      color: #d63384;
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .section {
+      background-color: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .highlight {
+      background-color: #fffae6;
+      border-left: 5px solid #ffd633;
+      padding: 10px 14px;
+      margin: 10px 0;
+    }
+    hr {
+      border: none;
+      border-top: 2px dashed #ccc;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 CSS 총복습 노트</h1>
+  <p>지금까지 배운 CSS 전 범위(선택자 1~5 → 레이아웃 → 박스모델 → position → Flexbox 부모속성)를 정리했습니다.</p>
+
+  <div class="section">
+    <h2>1️⃣ CSS 기본 구조</h2>
+    <p>CSS는 HTML 요소에 스타일을 지정하기 위한 언어입니다.</p>
+    <div class="highlight"><code>선택자 { 속성명: 속성값; }</code> 형태로 작성합니다.</div>
+  </div>
+
+  <div class="section">
+    <h2>2️⃣ 선택자 정리</h2>
+
+    <h3>기본 선택자</h3>
+    <table>
+      <tr><th>선택자</th><th>예시</th><th>설명</th></tr>
+      <tr><td>태그</td><td><code>p</code></td><td>특정 태그 전체 선택</td></tr>
+      <tr><td>클래스</td><td><code>.title</code></td><td>class="title"인 요소 선택</td></tr>
+      <tr><td>ID</td><td><code>#main</code></td><td>id="main"인 요소 선택</td></tr>
+      <tr><td>전체</td><td><code>*</code></td><td>모든 요소 선택</td></tr>
+    </table>
+
+    <h3>속성 선택자</h3>
+    <table>
+      <tr><th>형태</th><th>예시</th><th>설명</th></tr>
+      <tr><td>[속성]</td><td><code>[disabled]</code></td><td>속성이 존재하는 요소</td></tr>
+      <tr><td>[속성="값"]</td><td><code>[type="text"]</code></td><td>값이 정확히 일치</td></tr>
+      <tr><td>[속성^="값"]</td><td><code>[src^="https"]</code></td><td>해당 값으로 시작</td></tr>
+      <tr><td>[속성$="값"]</td><td><code>[src$=".jpg"]</code></td><td>해당 값으로 끝남</td></tr>
+      <tr><td>[속성*="값"]</td><td><code>[title*="공지"]</code></td><td>값을 포함</td></tr>
+    </table>
+
+    <h3>계층 선택자</h3>
+    <table>
+      <tr><th>형태</th><th>설명</th><th>예시</th></tr>
+      <tr><td>A B</td><td>A의 모든 하위요소 B</td><td><code>ul li</code></td></tr>
+      <tr><td>A &gt; B</td><td>A의 바로 아래 자식 B</td><td><code>ul &gt; li</code></td></tr>
+      <tr><td>A + B</td><td>A 바로 뒤의 형제 B</td><td><code>h2 + p</code></td></tr>
+      <tr><td>A ~ B</td><td>A 뒤의 모든 형제 B</td><td><code>h2 ~ p</code></td></tr>
+    </table>
+
+    <h3>상태 / 반응 선택자</h3>
+    <table>
+      <tr><th>선택자</th><th>상태</th><th>예시</th></tr>
+      <tr><td>:hover</td><td>마우스 올림</td><td><code>button:hover</code></td></tr>
+      <tr><td>:focus</td><td>포커스됨</td><td><code>input:focus</code></td></tr>
+      <tr><td>:checked</td><td>체크된 상태</td><td><code>input:checked</code></td></tr>
+    </table>
+
+    <h3>구조 / 고급 선택자</h3>
+    <table>
+      <tr><th>선택자</th><th>설명</th></tr>
+      <tr><td>:first-child / :last-child</td><td>형제 중 첫/마지막 요소</td></tr>
+      <tr><td>:nth-child(n)</td><td>n번째 요소</td></tr>
+      <tr><td>:nth-of-type(n)</td><td>같은 태그 중 n번째</td></tr>
+      <tr><td>:not()</td><td>특정 조건 제외</td></tr>
+      <tr><td>:only-child / :only-of-type</td><td>자식이 하나뿐일 때</td></tr>
+      <tr><td>:empty</td><td>내용이 비어있을 때</td></tr>
+    </table>
+
+    <h3>우선순위 규칙</h3>
+    <div class="highlight">
+      <p><strong>1️⃣ 인라인 + !important</strong> → <strong>2️⃣ 인라인 스타일</strong> → <strong>3️⃣ ID</strong> → <strong>4️⃣ Class / 속성 / 상태</strong> → <strong>5️⃣ 태그</strong> → <strong>6️⃣ 전체</strong></p>
+      <p>같은 순위일 때는 <strong>나중에 선언된 코드</strong>가 적용됩니다.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3️⃣ display 속성</h2>
+    <table>
+      <tr><th>값</th><th>설명</th><th>대표 태그</th></tr>
+      <tr><td>block</td><td>한 줄 전체 차지 (줄바꿈 O)</td><td><code>&lt;div&gt;</code>, <code>&lt;p&gt;</code></td></tr>
+      <tr><td>inline</td><td>내용만큼 차지 (줄바꿈 X)</td><td><code>&lt;span&gt;</code>, <code>&lt;a&gt;</code></td></tr>
+      <tr><td>inline-block</td><td>inline + 크기 지정 가능</td><td>버튼, 아이콘 등</td></tr>
+      <tr><td>none</td><td>화면에서 완전 제거</td><td>-</td></tr>
+      <tr><td>flex</td><td>Flexbox 컨테이너 설정</td><td>-</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>4️⃣ 박스모델(Box Model)</h2>
+    <p>모든 HTML 요소는 content, padding, border, margin 네 영역으로 구성됩니다.</p>
+    <table>
+      <tr><th>속성</th><th>설명</th></tr>
+      <tr><td>width / height</td><td>내용 영역 크기</td></tr>
+      <tr><td>padding</td><td>내용과 테두리 사이의 내부 여백</td></tr>
+      <tr><td>border</td><td>테두리 두께, 색상, 형태</td></tr>
+      <tr><td>margin</td><td>요소 바깥쪽 여백</td></tr>
+      <tr><td>box-sizing</td><td><code>border-box</code> 설정 시 padding, border 포함 계산</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>5️⃣ position 속성</h2>
+    <table>
+      <tr><th>값</th><th>설명</th></tr>
+      <tr><td>static</td><td>기본값 (문서 흐름대로 배치)</td></tr>
+      <tr><td>relative</td><td>자기 자신 기준으로 이동</td></tr>
+      <tr><td>absolute</td><td>부모 기준 좌표 배치 (부모는 relative 필요)</td></tr>
+      <tr><td>fixed</td><td>브라우저 화면 기준, 스크롤해도 고정</td></tr>
+      <tr><td>sticky</td><td>스크롤 도중 특정 위치에서 고정</td></tr>
+    </table>
+    <div class="highlight">보조 속성: <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code>, <code>z-index</code></div>
+  </div>
+
+  <div class="section">
+    <h2>6️⃣ Flexbox (부모 속성)</h2>
+    <h3>부모 컨테이너 속성</h3>
+    <table>
+      <tr><th>속성</th><th>설명</th></tr>
+      <tr><td>display: flex</td><td>Flexbox 레이아웃 활성화</td></tr>
+      <tr><td>flex-direction</td><td>메인축 방향 지정 (row / column)</td></tr>
+      <tr><td>flex-wrap</td><td>줄바꿈 여부 설정 (nowrap / wrap)</td></tr>
+      <tr><td>justify-content</td><td>메인축(가로축) 정렬</td></tr>
+      <tr><td>align-items</td><td>교차축(세로축) 정렬</td></tr>
+      <tr><td>align-content</td><td>여러 줄일 때 교차축 간격 조정</td></tr>
+    </table>
+    <div class="highlight">
+      중앙 정렬: <br>
+      <code>display: flex; justify-content: center; align-items: center;</code>
+    </div>
+  </div>
+
+  <hr>
+  <h2>✅ 핵심 복습 요약</h2>
+  <ul>
+    <li>선택자: HTML 요소를 선택해 스타일 지정</li>
+    <li>우선순위: <code>!important &gt; 인라인 &gt; ID &gt; Class &gt; Tag</code></li>
+    <li>박스모델: padding, border, margin 구조 이해</li>
+    <li>배치(position): 요소를 좌표 기반으로 정렬</li>
+    <li>Flexbox: 부모 속성 중심의 유연한 정렬 시스템</li>
+  </ul>
+</body>
+</html>
