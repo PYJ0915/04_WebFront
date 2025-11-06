@@ -1,0 +1,29 @@
+header > h1{
+  color: blue;
+  text-decoration-line: none;
+}
+
+.active{
+  font-weight: bold;
+}
+
+a[target="_blank"]{
+  color: green;
+}
+
+a[target="_blank"]:hover{
+  color: red;
+}
+
+/* Noto Sans KR가 웹폰트로 존재하지 않아 프리텐다드로 대체 */
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+*{
+  font-family: 'Pretendard';
+}
