@@ -98,7 +98,6 @@ div{
   /* 교차축 끝에 붙어서 정렬 */
   /* align-items: flex-end; */
 
-  align-content: ;
 }
 
 #con{ /* 부모 */
