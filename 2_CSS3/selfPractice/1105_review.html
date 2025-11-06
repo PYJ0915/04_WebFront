@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 선택자 총정리</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      line-height: 1.6;
+      background-color: #f9fafb;
+      color: #222;
+      padding: 20px 40px;
+    }
+    h1, h2, h3 {
+      color: #2b4b9b;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 16px 0;
+      background-color: white;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #e3e9f9;
+    }
+    code {
+      background-color: #f4f4f4;
+      color: #d63384;
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .section {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .highlight {
+      background-color: #fffae6;
+      border-left: 5px solid #ffd633;
+      padding: 8px 12px;
+      margin: 10px 0;
+    }
+    hr {
+      border: none;
+      border-top: 2px dashed #ccc;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 CSS 선택자 총정리</h1>
+  <p>HTML 요소에 스타일을 적용하기 위한 모든 선택자 유형을 한눈에 정리했습니다.</p>
+
+  <div class="section">
+    <h2>1️⃣ 기본 선택자</h2>
+    <table>
+      <tr><th>종류</th><th>예시</th><th>설명</th></tr>
+      <tr><td>태그 선택자</td><td><code>p</code></td><td>모든 p 태그에 적용</td></tr>
+      <tr><td>ID 선택자</td><td><code>#title</code></td><td>id="title" 인 요소</td></tr>
+      <tr><td>클래스 선택자</td><td><code>.box</code></td><td>class="box" 인 요소들</td></tr>
+      <tr><td>전체 선택자</td><td><code>*</code></td><td>모든 요소에 적용</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>2️⃣ 속성 선택자</h2>
+    <table>
+      <tr><th>선택자</th><th>설명</th><th>예시</th></tr>
+      <tr><td><code>[속성]</code></td><td>속성이 존재하는 요소</td><td><code>[disabled]</code></td></tr>
+      <tr><td><code>[속성="값"]</code></td><td>속성값이 정확히 일치</td><td><code>[type="text"]</code></td></tr>
+      <tr><td><code>[속성~="값"]</code></td><td>띄어쓰기로 구분된 단어 중 일치</td><td><code>[class~="main"]</code></td></tr>
+      <tr><td><code>[속성|="값"]</code></td><td>하이픈(-) 앞 부분이 일치</td><td><code>[lang|="ko"]</code></td></tr>
+      <tr><td><code>[속성^="값"]</code></td><td>해당 값으로 시작</td><td><code>[src^="https"]</code></td></tr>
+      <tr><td><code>[속성$="값"]</code></td><td>해당 값으로 끝남</td><td><code>[src$=".jpg"]</code></td></tr>
+      <tr><td><code>[속성*="값"]</code></td><td>해당 값을 포함</td><td><code>[title*="공지"]</code></td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>3️⃣ 계층 선택자</h2>
+    <table>
+      <tr><th>선택자</th><th>의미</th><th>예시</th></tr>
+      <tr><td><code>A B</code></td><td>A의 모든 후손 B</td><td><code>ul li</code></td></tr>
+      <tr><td><code>A > B</code></td><td>A의 바로 아래 자식 B</td><td><code>ul > li</code></td></tr>
+      <tr><td><code>A + B</code></td><td>A 바로 뒤의 형제 B 하나</td><td><code>h2 + p</code></td></tr>
+      <tr><td><code>A ~ B</code></td><td>A 뒤의 모든 형제 B</td><td><code>h2 ~ p</code></td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>4️⃣ 상태 / 반응 선택자</h2>
+    <table>
+      <tr><th>선택자</th><th>상태</th><th>적용 예시</th></tr>
+      <tr><td><code>:hover</code></td><td>마우스를 올렸을 때</td><td><code>button:hover</code></td></tr>
+      <tr><td><code>:active</code></td><td>클릭 순간</td><td><code>a:active</code></td></tr>
+      <tr><td><code>:focus</code></td><td>입력창 포커스</td><td><code>input:focus</code></td></tr>
+      <tr><td><code>:checked</code></td><td>체크박스/라디오 선택됨</td><td><code>input:checked</code></td></tr>
+      <tr><td><code>:enabled</code></td><td>활성 상태</td><td><code>input:enabled</code></td></tr>
+      <tr><td><code>:disabled</code></td><td>비활성 상태</td><td><code>input:disabled</code></td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>5️⃣ 구조 선택자</h2>
+    <table>
+      <tr><th>선택자</th><th>설명</th></tr>
+      <tr><td><code>:first-child</code></td><td>첫 번째 자식</td></tr>
+      <tr><td><code>:last-child</code></td><td>마지막 자식</td></tr>
+      <tr><td><code>:nth-child(n)</code></td><td>n번째 자식 (1부터 시작)</td></tr>
+      <tr><td><code>:nth-last-child(n)</code></td><td>뒤에서 n번째 자식</td></tr>
+      <tr><td><code>:nth-child(2n)</code></td><td>짝수 번째</td></tr>
+      <tr><td><code>:nth-child(2n-1)</code></td><td>홀수 번째</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>6️⃣ 형태 구조 선택자</h2>
+    <table>
+      <tr><th>선택자</th><th>설명</th></tr>
+      <tr><td><code>:first-of-type</code></td><td>같은 태그 중 첫 번째</td></tr>
+      <tr><td><code>:last-of-type</code></td><td>같은 태그 중 마지막</td></tr>
+      <tr><td><code>:nth-of-type(n)</code></td><td>같은 태그 중 n번째</td></tr>
+      <tr><td><code>:nth-last-of-type(n)</code></td><td>같은 태그 중 뒤에서 n번째</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>7️⃣ 부정 선택자</h2>
+    <p><code>:not(선택자)</code> → 괄호 안의 선택자를 제외한 나머지 요소에 적용</p>
+    <div class="highlight">
+      예: <code>li:not(:nth-child(3n))</code> → 3의 배수 항목 제외 후 나머지 li 선택
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>8️⃣ 선택자 우선순위</h2>
+    <table>
+      <tr><th>우선순위</th><th>선택자</th><th>예시</th></tr>
+      <tr><td>1️⃣ (가장 높음)</td><td>인라인 스타일</td><td><code>&lt;div style="color:red"&gt;</code></td></tr>
+      <tr><td>2️⃣</td><td>ID 선택자</td><td><code>#id</code></td></tr>
+      <tr><td>3️⃣</td><td>Class / 속성 / 상태 선택자</td><td><code>.class</code>, <code>[attr=value]</code>, <code>:hover</code></td></tr>
+      <tr><td>4️⃣</td><td>태그 / 의사 요소</td><td><code>div</code>, <code>::before</code></td></tr>
+      <tr><td>5️⃣ (가장 낮음)</td><td>전체 선택자</td><td><code>*</code></td></tr>
+    </table>
+  </div>
+
+  <hr>
+  <h2>✅ 핵심 암기 문장</h2>
+  <p><strong>“태그 → 아이디 → 클래스 → 속성 → 구조 → 상태 → 순서 → 부정”</strong></p>
+  <p>이 순서대로 익히면 어떤 선택자든 빠르게 적용할 수 있습니다 💪</p>
+</body>
+</html>
