@@ -79,7 +79,7 @@ div{
   /* 양 끝을 붙인 상태로 item 간격을 일정하게 정렬 */
   /* justify-content: space-between; */
 
-  /* 양 끝은 적은 간격으로, item 중간은 일정 간격으로 정렬 */
+  /* 각 item들을 일정한 공간으로 감싸면서 정렬 */
   /* justify-content: space-around; */
 
   /* item이 메인축 내에서 이븐한 간격으로 정렬 */
@@ -118,12 +118,117 @@ div{
   background-color: firebrick;
 }
 
+/* item(자식)에게 주는 flex 속성 */
+
+/* 
+flex-basis : item의 기본 크기를 결정하는 속성
+부모를 기준으로 자식이 얼마만큼 점유하겠는가?
+=> width와 비슷하지만 flex-grow, flex-shrink에 의해 유동적으로 변경 가능
+
+flex-basis: auto; (기본값)
+=> 요소의 본래 크기만큼 가짐(75 X 75)
+
+flex-basis: 0;
+=> 본래 요소의 크기 중 content만을 남겨놓고 차지하는 영역 없음
+*/
+
+.basis-20{
+ flex-basis: 20%;
+}
+
+.basis-30{
+  flex-basis: 30%;
+}
+
+.basis-50{
+  flex-basis: 50%;
+}
+
+/* flex-grow */
+.grow1{
+  flex-grow: 0;  
+  /* 0 (기본값): 요소가 추가적인 가용공간 차지하지 않음 
+  자신의 초기 크기만 유지
+  설정 값은 여백의 비율로 작성하고 적용됨*/
+}
+
+.grow2{
+  flex-grow: 2;
+}
+
+.grow3{
+  flex-grow: 1;
+}
+
+/* flex-shrink: 1 (기본값)
+컨테이너의 크기가 줄어들면 다른 요소들(자식요소)들과 함께 비율적으로 축소될 수 있음을 의미*/
+
+.shrink1{
+  flex-shrink: 0;
+  /* 줄어들지 않음 (컨테이너 공간이 줄어들어도 본인의 원래 크기 유지) */
+}
+
+.shrink2{
+  flex-shrink: 1;
+}
+
+.shrink3{
+  flex-shrink: 2;
+  /* flex-shrink: n
+  => n값의 비율대로 줄어든다 */
+}
+
+/* flex : Flexbox 내에서 아이템의 크기와 비율을 설정하는 속성 */
+
+.flex-test1{
+
+  flex : 1
+  /* flex-grow: 1; 
+  => 남은 가용 공간을 1비율로 차지
+
+     flex-shrink: 1;
+  => 컨테이너의 공간이 부족할 때 1 비율로 축소
+
+     flex-basis: 0;
+  => 요소의 content만 차지
+  */
+}
+
+.flex-test2{
+
+  flex: 1 0 auto;
+   /* flex-grow: 1; 
+  => 남은 가용 공간을 1비율로 차지
+
+     flex-shrink: 0;
+  => 줄어들지 않겠다
+
+     flex-basis: auto;
+  => 기본 크기가 auto(본인 요소 원래 크기)
+  */
+}
+
+.flex-test3{
+
+  flex: 1 50%;
+  /* flex-grow: 1; 
+  => 남은 가용 공간을 1비율로 차지
+
+     flex-shrink: 1;
+  => 컨테이너의 공간이 부족할 때 1 비율로 축소
+
+     flex-basis: 50%;
+  => 기본 점유율이 50%
+  */
+
+}
+/* ---------------------------------------------------------- */
 /* (자식 요소 속성)
 order : 기본값 0; (양수 ~ 음수 설정 가능)
 값이 작은 요소가 먼저 배치되고, 큰 요소가 나중에 배치됨! */
 
 .order:nth-child(1){
-  order: 1;
+  order: 3;
 }
 
 .order:nth-child(2){
@@ -131,5 +236,259 @@ order : 기본값 0; (양수 ~ 음수 설정 가능)
 }
 
 .order:nth-child(3){
-  order: 3;
+  order: 1;
+}
+
+/* 문제1 */
+.container-1{
+  width: 800px;
+  height: 500px;
+  display: flex;
+
+  flex-direction: column;
+}
+
+.header-1, .footer-1{
+  flex-basis: 20%;
+  background-color: gray;
+}
+
+.body-1{ /* container-1의 자식이자 body-item들의 부모*/
+  flex-basis: 60%; /* 자식 전용 */
+  display: flex; /* 부모 전용 */
+}
+
+.body-item-1:nth-child(1){
+  flex-basis: 30%;
+  background-color: skyblue;
+}
+
+.body-item-1:nth-child(2){
+  flex-basis: 50%;
+  background-color: tomato;
+}
+
+.body-item-1:nth-child(3){
+  flex-basis: 20%;
+  background-color: antiquewhite;
+}
+
+/* 문제2 */
+.container-2{
+  width: 800px;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header-2{
+  flex-basis: 20%;
+  background-color: red;
+}
+
+.body-2{
+  flex-basis: 80%;
+  background-color: yellow;
+
+  display: flex;
+}
+
+.body-item-2:nth-child(1){
+  flex-basis: 30%;
+}
+
+.body-item-2:nth-child(2){
+  flex-basis: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.body-ii-1:nth-child(1){
+  flex-basis: 80%;
+  background-color: chartreuse;
+}
+
+.body-ii-1:nth-child(2){
+  flex-basis: 20%;
+  background-color: blue;
+}
+
+/* 문제3 */
+.container-3{
+  display: flex;
+  width: 800px;
+  height: 500px;
+  flex-direction: column;
+}
+
+.header-3{
+  flex-basis: 30%;
+  background-color: yellow;
+}
+
+.body-3{
+  flex-basis: 70%;
+  background-color: skyblue;
+  display: flex;
+}
+
+.body-item-3:nth-child(1){
+  flex-basis: 30%;
+}
+
+.body-item-3:nth-child(2){
+  flex-basis: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.body-ii-2:nth-child(1){
+  flex-basis: 50%;
+  display: flex;
+}
+
+.body-ii-2:nth-child(2){
+  flex-basis: 50%;
+  background-color: deeppink;
+}
+
+.body-iii-1:nth-child(1){
+  flex-basis: 70%;
+  background-color: aquamarine;
+}
+
+.body-iii-1:nth-child(2){
+  flex-basis: 30%;
+  background-color: tomato;
+}
+
+/* 문제4 */
+.container-4{
+  width: 800px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-4, .footer-4{
+  flex-basis: 20%;
+  background-color: darkgreen;
+}
+
+.body-4{
+  flex-basis: 60%;
+  background-color: yellow;
+  display: flex;
+}
+
+.body-item-4:nth-child(1){
+  flex-basis: 30%;
+}
+
+.body-item-4:nth-child(2){
+  flex-basis: 70%;
+  background-color: orange;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.body-ii-3{
+  width: 165px;
+  height: 155px;
+  background-color: red;
+}
+
+/* 문제5 */
+.container-5{
+  width: 800px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-5{
+  flex-basis: 30%;
+  background-color: yellow;
+  display: flex;
+}
+
+.head-item-1:nth-child(1){
+  flex-grow: 1;
+}
+.head-item-1:nth-child(2){
+  flex-grow: 2;
+}
+.head-item-1:nth-child(3){
+  flex-grow: 2;
+}
+
+.body-5{
+  flex-basis: 70%;
+  display: flex;
+  background-color: skyblue;
+}
+
+.body-item-5:nth-child(1){
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.body-ii-4{
+  flex-grow: 1;
+}
+
+.body-item-5:nth-child(2){
+  flex-basis: 70%;
+  display: flex;
+}
+
+.body-item-5-h, .body-item-5-f{
+  flex-basis: 20%;
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+}
+
+.body-item-5-b{
+  flex-basis: 60%;
+  flex-direction: column;
+  display: flex;
+}
+
+.body-item-5-b-i:nth-child(1){
+  flex-basis: 50%;
+  background-color: orange;
+}
+.body-item-5-b-i:nth-child(2){
+  flex-basis: 50%;
+  display: flex;
+}
+
+.body-item-5-b-ii:nth-child(1){
+  flex-basis: 50%;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+}
+
+.body-item-5-b-ii:nth-child(2){
+  flex-basis: 50%;
+  background-color: red;
+}
+
+.body-item-5-b-iii{
+  flex-grow: 1;
+}
+
+.body-item-5-f-i:nth-child(1), .body-item-5-f-i:nth-child(3){
+  flex-grow: 1;
+}
+
+.body-item-5-f-i:nth-child(2){
+  flex-grow: 3;
 }
