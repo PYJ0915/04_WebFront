@@ -1,0 +1,281 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+}
+
+main{
+  padding: 0;
+  margin: auto;
+}
+
+header{
+  height: 56px;
+  display: flex;
+}
+
+.menu{
+  padding: 24px;
+  flex-basis: 5%;
+  width: 40px;
+  height: 40px;
+}
+
+.menu > a{
+  color: black;
+  text-decoration: none;
+  
+  font-size: 24px;
+  transition-duration: 0.2s;
+}
+
+.menu > a:hover{
+  background-color: #e5e5e5;
+  border-radius: 40px;
+}
+
+.logo{
+  padding: 24px;
+  flex-basis: 12%;
+  padding-right: 400px;
+}
+
+.logo img{
+  width: 95px;
+}
+
+.search{
+  flex-basis: 30%;
+  padding: 10px;
+  
+}
+
+.search  fieldset{
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 0;
+  height: 40px;
+  display: flex;
+}
+
+.search-form input{
+  flex-basis: 83%;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+#keyboard{
+  flex-basis: 5%;
+  cursor: pointer;
+  font-size: 15px;
+  border: 0;
+  background-color: transparent;
+  margin-right: 5px;
+}
+
+
+#search-btn{
+  flex-basis: 12%;
+  border: 0;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: #e9ecef;
+  border-top-right-radius: 17px;
+  border-bottom-right-radius: 17px;
+  border-left: 1px solid black;
+}
+
+#search-btn:hover{
+  background-color: #dee2e6;
+}
+
+.mic{
+  padding-top: 8px;
+  padding-left: 5px;
+  flex-basis: 3%;
+}
+
+.mic > button{
+  font-size: 20px;
+  width: 80%;
+  height: 90%;
+  border-radius: 30px;
+  border: none;
+  background-color: #e9ecef;
+  cursor: pointer;
+}
+
+.mic > button:hover{
+   background-color: #dee2e6;
+}
+
+.setting{
+  flex-basis: 20%;
+  padding-left: 500px;
+  padding-top: 20px;
+  padding-right: 10px;
+}
+
+.setting > button{
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.login{
+  flex-basis: 5%;
+  padding-top: 10px;
+}
+
+.login > button{
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  color: #0096c7;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.login > button:hover{
+  background-color: #a9d6e5;
+}
+
+.content-1{
+  padding-top: 30px;
+  padding-left: 80px;
+}
+
+.title > h2{
+  margin: 0;
+}
+
+.channel{
+  display: flex;
+  padding-top: 10px;
+}
+
+.channel img{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.channel-name{
+  padding-left: 5px;
+  height: 22px;
+  text-decoration: none;
+  color: black;
+}
+.channel p{
+  margin: 0;
+  height: 18px;
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+.channel > div{
+  display: flex;
+  flex-direction: column;
+}
+
+#subscribe-btn{
+  width: 58px;
+  height: 36px;
+  margin-left: 30px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+  
+.channel > fieldset{
+  margin-left: 770px;
+  flex-basis: 7%;
+  background-color: #e9ecef;
+  padding: 0;
+  border-radius: 20px;
+  height: 36px;
+  border: none;
+  display: flex;
+}
+
+#recommand-btn{
+  flex-basis: 65%;
+  border: none;
+  background-color: transparent;
+  border-right: 1px solid #ddd;
+  cursor: pointer;
+}
+
+#hate-btn{
+  flex-basis: 35%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#recommand-btn:hover, #hate-btn:hover, #share-btn:hover, #bookmark-btn:hover, #plus-btn:hover{
+  background-color: #dee2e6;
+  border-radius: 20px;
+}
+
+#share-btn, #bookmark-btn{
+  flex-basis: 4%;
+  margin-left: 7px;
+  border-radius: 20px;
+  height: 36px;
+  border: none;
+}
+
+#plus-btn{
+  flex-basis: 2%;
+  margin-left: 7px;
+  border-radius: 20px;
+  height: 36px;
+  border: none;
+}
+
+#description{
+  background-color: #e9ecef;
+  border-radius: 30px;
+  width: 1300px;
+  height: 104px;
+  display: flex;
+  cursor: pointer;
+}
+
+#description > pre{
+   display: -webkit-box;
+
+  -webkit-line-clamp: 3;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+  padding: 13px;
+}
+
+#description > p{
+  padding-top: 48px;
+}
+
+#description:hover{
+  background-color: #f7ede2;
+}
+
+
+
+
+
