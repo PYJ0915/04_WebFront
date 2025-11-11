@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">\>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Master Summary</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f9fafb;
+      color: #222;
+      padding: 40px 60px;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #2b4b9b;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #e3e9f9;
+    }
+    code {
+      background-color: #f4f4f4;
+      color: #d63384;
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .section {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .highlight {
+      background-color: #fff9db;
+      border-left: 5px solid #ffd633;
+      padding: 10px 14px;
+      margin: 10px 0;
+    }
+    hr {
+      border: none;
+      border-top: 2px dashed #ccc;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 CSS 마스터 요약</h1>
+  <p>선택자 → 레이아웃 → 박스모델 → position → Flexbox → 글자 → 시맨틱 → 반응형까지</p>
+
+  <div class="section">
+    <h2>1️⃣ CSS 기본 문법</h2>
+    <div class="highlight">
+      <code>선택자 { 속성명: 속성값; }</code>
+    </div>
+    <p>선택자는 스타일 적용 대상을 지정하고, 속성명과 값으로 꾸밈을 정의합니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>2️⃣ 선택자(Selector)</h2>
+    <h3>기본 선택자</h3>
+    <table>
+      <tr><th>선택자</th><th>예시</th><th>설명</th></tr>
+      <tr><td>태그</td><td><code>p</code></td><td>모든 &lt;p&gt; 요소 선택</td></tr>
+      <tr><td>클래스</td><td><code>.title</code></td><td>class="title"</td></tr>
+      <tr><td>ID</td><td><code>#main</code></td><td>id="main"</td></tr>
+      <tr><td>전체</td><td><code>*</code></td><td>모든 요소</td></tr>
+    </table>
+
+    <h3>상태 선택자</h3>
+    <table>
+      <tr><th>선택자</th><th>상황</th><th>예시</th></tr>
+      <tr><td>:hover</td><td>마우스 올림</td><td><code>button:hover</code></td></tr>
+      <tr><td>:focus</td><td>입력창 포커스</td><td><code>input:focus</code></td></tr>
+      <tr><td>:checked</td><td>체크된 상태</td><td><code>input:checked</code></td></tr>
+    </table>
+
+    <h3>구조 선택자</h3>
+    <table>
+      <tr><th>선택자</th><th>설명</th></tr>
+      <tr><td>:first-child / :last-child</td><td>형제 중 첫/마지막</td></tr>
+      <tr><td>:nth-child(n)</td><td>n번째 자식</td></tr>
+      <tr><td>:nth-of-type(n)</td><td>같은 태그 중 n번째</td></tr>
+      <tr><td>:not()</td><td>특정 조건 제외</td></tr>
+      <tr><td>:only-child / :empty</td><td>유일 자식 / 내용 없음</td></tr>
+    </table>
+
+    <div class="highlight">
+      우선순위: <strong>!important → 인라인 → ID → Class → Tag → *</strong><br>
+      같은 수준이면 나중에 선언된 스타일이 우선 적용됩니다.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3️⃣ display 속성</h2>
+    <table>
+      <tr><th>값</th><th>설명</th></tr>
+      <tr><td>block</td><td>줄바꿈 발생, 한 줄 전체 차지</td></tr>
+      <tr><td>inline</td><td>내용만큼 차지, 줄 유지</td></tr>
+      <tr><td>inline-block</td><td>inline처럼 줄 유지 + 크기 지정 가능</td></tr>
+      <tr><td>none</td><td>요소 숨김 (공간 사라짐)</td></tr>
+      <tr><td>flex</td><td>Flexbox 컨테이너로 전환</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>4️⃣ 박스모델(Box Model)</h2>
+    <p>요소는 content, padding, border, margin 네 부분으로 구성됩니다.</p>
+    <table>
+      <tr><th>속성</th><th>설명</th></tr>
+      <tr><td>padding</td><td>내용과 테두리 사이 여백</td></tr>
+      <tr><td>border</td><td>테두리 두께·색상</td></tr>
+      <tr><td>margin</td><td>요소 간 간격</td></tr>
+      <tr><td>box-sizing</td><td><code>border-box</code>는 padding·border 포함 계산</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>5️⃣ position (위치 제어)</h2>
+    <table>
+      <tr><th>값</th><th>설명</th></tr>
+      <tr><td>static</td><td>기본값, 문서 흐름대로</td></tr>
+      <tr><td>relative</td><td>자기 자신 기준 이동</td></tr>
+      <tr><td>absolute</td><td>부모 기준 좌표 배치</td></tr>
+      <tr><td>fixed</td><td>화면 기준, 스크롤 고정</td></tr>
+      <tr><td>sticky</td><td>스크롤 시 특정 지점 고정</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>6️⃣ Flexbox</h2>
+    <h3>부모 속성</h3>
+    <table>
+      <tr><th>속성</th><th>설명</th></tr>
+      <tr><td>display:flex</td><td>플렉스 레이아웃 활성화</td></tr>
+      <tr><td>flex-direction</td><td>가로(row)/세로(column) 배치</td></tr>
+      <tr><td>justify-content</td><td>메인축 정렬</td></tr>
+      <tr><td>align-items</td><td>교차축 정렬</td></tr>
+      <tr><td>flex-wrap</td><td>줄바꿈 여부 설정</td></tr>
+    </table>
+    <div class="highlight">
+      중앙정렬 예시:<br>
+      <code>display:flex; justify-content:center; align-items:center;</code>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>7️⃣ 글자 스타일</h2>
+    <table>
+      <tr><th>속성</th><th>기능</th></tr>
+      <tr><td>color</td><td>글자색</td></tr>
+      <tr><td>font-size</td><td>크기(px, em, rem)</td></tr>
+      <tr><td>font-family</td><td>글꼴 지정</td></tr>
+      <tr><td>text-align</td><td>정렬(left, center, right)</td></tr>
+      <tr><td>letter-spacing</td><td>자간</td></tr>
+      <tr><td>text-decoration</td><td>밑줄, 취소선</td></tr>
+      <tr><td>text-shadow</td><td>글자 그림자</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>8️⃣ 시맨틱 구조</h2>
+    <table>
+      <tr><th>태그</th><th>의미</th></tr>
+      <tr><td>&lt;header&gt;</td><td>머리말 영역 (로고, 메뉴)</td></tr>
+      <tr><td>&lt;nav&gt;</td><td>내비게이션 (링크 그룹)</td></tr>
+      <tr><td>&lt;main&gt;</td><td>본문 (핵심 콘텐츠)</td></tr>
+      <tr><td>&lt;section&gt;</td><td>주제별 구역</td></tr>
+      <tr><td>&lt;footer&gt;</td><td>바닥글, 저작권</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>9️⃣ 반응형 디자인</h2>
+    <p>화면 크기에 따라 다른 스타일을 적용하는 기법입니다.</p>
+    <div class="highlight">
+      <code>@media (max-width:768px){ body{ background:lightgray; } }</code>
+    </div>
+    <p><strong>모바일 퍼스트:</strong> 기본 스타일을 모바일로 두고 큰 화면만 확장합니다.</p>
+  </div>
+
+  <hr>
+  <h2>✅ 핵심 요약</h2>
+  <ul>
+    <li>선택자: 스타일 대상 선택</li>
+    <li>박스모델: 여백과 영역 구조</li>
+    <li>position: 좌표 기반 배치</li>
+    <li>Flexbox: 축 중심의 유연한 레이아웃</li>
+    <li>시맨틱 + 반응형: 구조적이고 모든 화면 대응</li>
+  </ul>
+</body>
+</html>

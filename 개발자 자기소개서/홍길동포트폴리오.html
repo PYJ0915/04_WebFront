@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개발자 포트폴리오</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./favicon-96x96.png">
+  <script src="https://kit.fontawesome.com/652d962d08.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <main>
+
+    <header class="title">
+      <h1>PORTFOLIO</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact-me">Contact Me</a></li>
+      </ul>
+    </nav>
+
+    <section id="about-me">
+      <h2>About me</h2>
+      <div>
+        <img src="./홍길동.png" alt="홍길동 증명사진">
+      
+      <h3>정의로움을 추구하는 개발자</h3>
+        <ul>
+          <li>이름 : 홍길동</li>
+          <li>생년월일 : 1994.01.01</li>
+          <li>전화번호 : 010-1234-1234</li>
+          <li>이메일 : hong_gd@kh.kr</li>
+          <li>주소 : 전라남도 장성군 황룡면 홍길동로 431</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li>2019.02 성균관대학교 법학과 석사 졸업</li>
+        <li>2024.02 성균관대학교 법학전문대학원 법학석사 취득</li>
+        <li>2025.11 정보처리기사 취득</li>
+        <li>2026.02 KH정보교육원 React & Spring 활용 자바(Java) 개발자 양성과정 수료
+          <ol type="i">
+            <li>Spring Boot 기반 REST API 개발 실습</li>
+            <li>React SPA 구조 설계 및 상태관리 구현</li>
+            <li>팀 프로젝트: 학생 관리 시스템 제작</li>
+          </ol>
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <table>
+        <tr>
+          <th>Back-End</th>
+          <th>Front-end</th>
+          <th>Develop&Tools</th>
+        </tr>
+        <tr>
+          <td>
+            <img src="./java-logo.jpg" alt="자바 로고">
+            <p>Java</p>
+          </td>
+          <td>
+            <img src=html5-logo.png alt="HTML5 로고">
+            <p>HTML5</p>
+          </td>
+          <td>
+            <img src="github-logo.png" alt="깃허브 로고">
+            <p>Github</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="springboot-logo.png" alt="Spring Boot 로고">
+            <p>Spring Boot</p>
+          </td>
+          <td>
+            <img src="CSS3_logo.png" alt="CSS3 로고">
+            <p>CSS3</p>
+          </td>
+          <td>
+            <img src="vscode-logo.jpg" alt="VsCode 로고">
+            <p>VsCode</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="oracle-logo.png" alt="오라클 로고">
+            <p>Oracle</p>
+          </td>
+          <td>
+            <img src="js-logo.png" alt="자바스크립트 로고">
+            <p>Javascript</p>
+          </td>
+          <td>
+            <img src="eclipse-logo.png" alt="이클립스 로고">
+            <p>Eclipse</p>
+          </td>
+        </tr>
+     </table>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <table>
+        <tr>
+          <th>프로젝트명</th>
+          <th>기간</th>
+          <th>역할</th>
+          <th>사용 기술</th>
+          <th>설명</th>
+        </tr>
+
+        <tr>
+          <td>KH Student Manager</td>
+          <td>2025.10 ~ 2025.12</td>
+          <td>팀장 / 백엔드</td>
+          <td>Java, JDBC, Oracle</td>
+          <td>학생 정보 CRUD 기능 구현 및 DB연동</td>
+          <td><i class="fa-solid fa-people-group"></i></td>
+        </tr>
+
+        <tr>
+          <td>React Movie Finder</td>
+          <td>2025.12 ~ 2026.02</td>
+          <td>프론트엔드 개발</td>
+          <td>React, CSS, API</td>
+          <td>영화 검색 및 찜 기능</td>
+          <td><i class="fa-solid fa-people-group"></i></td>
+        </tr>
+
+        <tr>
+          <td>Portfolio WebSite</td>
+          <td>2026.02</td>
+          <td>개인</td>
+          <td>HTML, CSS, Javascript</td>
+          <td>반응형 포트폴리오 페이지 제작</td>
+          <td><i class="fa-solid fa-person"></i></td>
+        </tr>
+      </table>
+
+    </section>
+
+    <section id="contact-me">
+      <h2>Contact Me</h2>
+      <form action="#" method="get">
+      
+        <fieldset>
+          <i class="fa-solid fa-user"></i>
+          <input type="text" placeholder="이름" name="name">
+        </fieldset>
+
+        <fieldset>
+          <i class="fa-solid fa-envelope"></i>
+          <input type="email" placeholder="이메일" name="email">
+        </fieldset>
+
+        <fieldset>
+          <i class="fa-solid fa-phone"></i>
+          <input type="tel" placeholder="전화번호" name="phone">
+        </fieldset>
+
+        <fieldset>
+          <i class="fa-solid fa-message"></i>
+          <textarea placeholder="전달 메세지" name="message" ></textarea>
+        </fieldset>
+
+        <button class="fa-solid fa-paper-plane"></button>
+        
+      </form>
+    </section>
+
+  </main>
+
+  
+</body>
+</html>
