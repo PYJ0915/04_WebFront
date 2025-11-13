@@ -93,11 +93,56 @@ function cssTest() {
   
 }
 
- function readValue() {
-  const container = document.getElementsByClassName("chatting");
+// 카카오톡 채팅 만들기
+function readValue() {
 
-  console.log(container);
+  // 채팅이 출력되는 배경 요소
+  const bg = document.querySelector("#chatting-bg");
 
-  container[0].style.width = "300px"
-  container[0].style.height = "400px"
- }
+  // 채팅 내용 입력 input 요소
+  let input = document.getElementById("user-input");
+
+  // 입력된 값이 없을 경우 => 전송 X
+  // 1) 진짜 안적은 경우
+  // 2) 공백만 적은 경우
+
+  // 문자열.trim() : 문자열 좌우 공백 제거
+  if(input.value.trim().length == 0) {
+    alert("채팅 내용을 입력해주세요!");
+    input.value = ""; // 이전 input에 작성된 값 삭제
+    input.focus(); // input에 커서 활성화
+    return;
+  } 
+
+  // 공백을 제외한 어떠한 값을 입력한 경우
+   bg.innerHTML += (`<p><span>${input.value}</span></p>`);
+
+   // bg.scrollTop: 현재 스크롤 위치
+   // 스크롤이 현재 얼마만큼 내려와있는지 나타냄
+   console.log(bg.scrollTop);
+
+   // bg.scrollHeight: bg의 스크롤 전체 높이
+   // 스크롤바를 올리고 내리고 할 수 있는 전체 높이 
+   console.log(bg.scrollHeight);
+  
+  bg.scrollTop = bg.scrollHeight;
+
+  input.value = "";
+  input.focus();
+
+}
+
+// keydown : 키가 눌러졌을 때 (꾹 누르고 있으면 계속 인식됨)
+// keyup : 눌려지던 키가 떼어졌을 때(올라왔을 때 한 번 인식)
+document.getElementById("user-input").addEventListener("keyup" , function(e) {
+  // 매개변수 e : 이벤트 객체 (발생한 이벤트 정보를 담고있는 객체)
+
+  console.log(e);
+
+  if(e.key == "Enter") {
+
+    readValue();
+
+  }
+
+});
