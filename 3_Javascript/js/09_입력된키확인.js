@@ -71,7 +71,7 @@ document.addEventListener("keyup", function (e) {
 
 // 쌤 풀이
 
-/* 풀이 1.
+/* 풀이 1. switch-case
 
 const keys = document.getElementsByClassName("key");
 
@@ -115,7 +115,7 @@ document.addEventListener("keyup", function (e) {
 
 */
 
-// 풀이 2.
+// 풀이 2. keyMap 객체 + 화살표 함수 활용
 // 화면에 존재하는 key 모두 얻어오기
 const keys = document.getElementsByClassName("key");
 const keyMap = { 'q': 0, 'w': 1, 'e': 2, 'r': 3 }; // JS 객체
@@ -156,7 +156,7 @@ document.addEventListener("keyup", (e) => changeKeyColor(e, "white"));
 // -> ("keydown", (e) => changeKeyColor(e, "deepPink")) 
 
 
-/* 풀이 3
+/* 풀이 3 keyMap 객체 + 삼항연산자
 const keys = document.querySelectorAll(".key");
 const keyMap = { q: 0, w: 1, e: 2, r: 3 };
 
@@ -171,3 +171,5 @@ function handleKey(e) {
   keys[idx].style.backgroundColor = e.type === "keydown" ? "deeppink" : "white";
 }
 */
+
+// 중복된 부분이 많을 땐 함수를 통해 중복을 줄일 수 있다!
