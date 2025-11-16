@@ -23,7 +23,7 @@ console.log((a, b) => a * b);
 
 function practice4(a, b) {
 
-  if(Number(a) > Number(b)){
+  if (Number(a) > Number(b)) {
     console.log("첫 번째 숫자가 더 큽니다");
   } else {
 
@@ -35,7 +35,7 @@ function practice4(a, b) {
 
 // 5. 문자열을 매개변수로 받아 문자열의 길이를 출력하는 함수를 선언 및 정의하고 호출하시오
 
-function practice5(str){
+function practice5(str) {
 
   console.log(str.length);
 
@@ -47,7 +47,7 @@ practice5("안녕하세요 제가 LA에 있을때...");
 
 function practice6(str, count) {
 
-  for(let i = 0; i < count; i++){
+  for (let i = 0; i < count; i++) {
 
     console.log(str);
 
@@ -61,7 +61,7 @@ practice6("헬로우 에브리원", 10);
 
 function practice7(num) {
 
-  if(num % 2 == 0) {
+  if (num % 2 == 0) {
     console.log(true);
   } else {
     console.log(false);
@@ -75,15 +75,31 @@ practice7(17);
 
 function practice8(num1, num2, num3) {
 
+  let max = num1;
 
+  if (max < num2) {
+
+    max = num2;
+
+  }
+
+  if (max < num3) {
+
+    max = num3;
+
+  }
+
+  return max;
 
 }
+
+console.log(practice8(7, 5, 10));
 
 // 9. 배열을 매개변수로 받아 첫 번째 요소를 반환하는 화살표 함수를 선언 및 정의하고 호출하시오
 
 function practice9(arr) {
 
-return arr[0];
+  return arr[0];
 
 }
 
@@ -99,7 +115,7 @@ function practice10(arr) {
   let sum = 0;
   let avg = 0;
 
-  for(let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
 
     sum += arr[i];
 
@@ -107,15 +123,32 @@ function practice10(arr) {
 
   avg = (sum / arr.length);
 
-  const obj = {"sum" : sum, "avg" : avg};
+  const obj = { "sum": sum, "avg": avg };
 
   return obj
 
 }
 
 const arr2 = [10, 20, 30, 40, 50];
+
 console.log(practice10(arr2));
 
 // 11. 숫자 두 개와 연산을 수행하는 함수를 매개변수로 받아, 두 숫자에 해당 연산을 적용한 결과를 반환하는 함수를 선언 및 정의하고 호출하시오
 
+function practice11(a, b, multiFn) {
+
+  console.log(multiFn(a, b));
+
+}
+
+practice11(3, 11, (a, b) => a * b)
+
 // 12. 1. 사람의 이름과 2. 인사말을 출력하는 함수를 [매개변수]로 받아, 해당 이름과 인사말을 사용하여 인사를 출력하는 함수를 선언 및 정의하고 호출하시오
+
+function practice12(printName, printHello) {
+
+  console.log(printName() + printHello());
+
+};
+
+practice12(() => "홍길동입니다", () => " 안녕하세요 반갑습니다 앞으로 잘 부탁드려요!");
