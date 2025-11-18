@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시험 대비 연습 문제</title>
+  <link rel="stylesheet" href="../css/시험대비연습문제.css">
+</head>
+<body>
+  <form>
+    <h1>시험 대비 연습 문제</h1>
+  너비 <input type="number" id="input-width" name="width"> px <br>
+  높이 <input type="number" id="input-height" name="height"> px <br>
+  색상 <input type="text" id="input-color" name="color"> <br>
+  
+  <ul id="location">
+    <li>상하
+      <ul id="updown">
+        <li>위 <input type="radio" name="updown" class="location"></li>
+        <li>가운데 <input type="radio" name="updown" class="location"></li>
+        <li>아래 <input type="radio" name="updown" class="location"></li>
+      </ul>
+    </li>
+    <li>좌우
+      <ul id="leftright">
+        <li>오른쪽 <input type="radio" name="leftright" class="location"></li>
+        <li>가운데 <input type="radio" name="leftright" class="location"></li>
+        <li>왼쪽 <input type="radio" name="leftright" class="location"></li>
+      </ul>
+    </li>
+  </ul>
+
+  <textarea id="input-content" rows="10" cols="50" name="content"></textarea> <br>
+
+  <button type="button" id="apply-btn">적용</button>
+  </form>
+
+  
+  <hr>
+  
+  <div id="result"></div>
+  
+  <script src="../js/시험대비연습문제.js"></script>
+</body>
+</html>
