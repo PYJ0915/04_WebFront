@@ -7,25 +7,25 @@
   <link rel="stylesheet" href="../css/시험대비연습문제.css">
 </head>
 <body>
-  <form>
+  <form class="container">
     <h1>시험 대비 연습 문제</h1>
-  너비 <input type="number" id="input-width" name="width"> px <br>
-  높이 <input type="number" id="input-height" name="height"> px <br>
-  색상 <input type="text" id="input-color" name="color"> <br>
+  너비 <input type="number" id="input-width"> px <br>
+  높이 <input type="number" id="input-height"> px <br>
+  색상 <input type="text" id="input-color"> <br>
   
   <ul id="location">
     <li>상하
       <ul id="updown">
-        <li>위 <input type="radio" name="updown" class="location"></li>
-        <li>가운데 <input type="radio" name="updown" class="location"></li>
-        <li>아래 <input type="radio" name="updown" class="location"></li>
+        <li>위(기본값) <input type="radio" name="updown" value="top" checked></li>
+        <li>가운데 <input type="radio" name="updown" value="mid"></li>
+        <li>아래 <input type="radio" name="updown" value="bottom"></li>
       </ul>
     </li>
     <li>좌우
       <ul id="leftright">
-        <li>오른쪽 <input type="radio" name="leftright" class="location"></li>
-        <li>가운데 <input type="radio" name="leftright" class="location"></li>
-        <li>왼쪽 <input type="radio" name="leftright" class="location"></li>
+        <li>왼쪽(기본값) <input type="radio" name="leftright" value="left" checked></li>
+        <li>가운데 <input type="radio" name="leftright" value="middle"></li>
+        <li>오른쪽 <input type="radio" name="leftright" value="right"></li>
       </ul>
     </li>
   </ul>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI 구현</title>
+  <link rel="stylesheet" href="./UI구현.css">
+</head>
+<body>
+
+  <div class="container">
+
+    너비 : <input type="number" id="width">px
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;높이 : <input type="number" id="height"> px <br>
+    글자 크기 : <input type="number" id="font-size"> px
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;굵기 : 
+      보통(기본값) <input type="radio" name="font-weight" value="normal" checked>
+      굵게 <input type="radio" name="font-weight" value="bold"> <br>
+    글자색 : <input type="text" id="color">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;배경색 : <input type="text" id="background-color"> <br>
+    가로 정렬 : 
+      왼쪽(기본값) <input type="radio" name="leftright" value="start" checked>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;가운데 <input type="radio" name="leftright" value="center">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;오른쪽 <input type="radio" name="leftright" value="end"> <br>
+    세로 정렬 : 
+      위(기본값) <input type="radio" name="updown" value="start" checked>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;가운데 <input type="radio" name="updown" value="center">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아래 <input type="radio" name="updown" value="end"> <br>
+    출력 문자열 : <input type="text" id="content"> <br>
+    <button type="button" id="apply-btn">적용하기</button>
+
+  </div>
+
+  <div id="result"></div>
+
+  
+  <script src="./UI구현.js"></script>
+</body>
+</html>
